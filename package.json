@@ -1,6 +1,6 @@
 {
   "name": "win-sqlcipher",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Encrypted sqlite3 for Windows",
   "keywords": [
     "sqlite3",
