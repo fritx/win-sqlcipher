@@ -19,4 +19,6 @@ var targetStr = targetArgs.reduce(function (m, arg) {
 
 // windows
 // todo: pass build args
-exec('npm install sqlite3 --build-from-source' + targetStr)
+// exec('npm install sqlite3 --build-from-source' + targetStr)
+cd('node_modules/sqlite3')
+exec('npm i --build-from-source' + targetStr)

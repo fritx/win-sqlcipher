@@ -5,6 +5,9 @@
 
 ```sh
 npm install win-sqlcipher
+
+# for NW.js (formally node-webkit)
+npm i win-sqlcipher --runtime=node-webkit --target=0.12.3 --target_arch=ia32
 ```
 
 ```js
@@ -15,16 +18,17 @@ db.serialize(function() {
   db.run("PRAGMA KEY = 'secret'");
   db.run("PRAGMA CIPHER = 'aes-128-cbc'");
 
+  db.run("DROP TABLE IF EXISTS lorem");
   db.run("CREATE TABLE lorem (info TEXT)");
 
   var stmt = db.prepare("INSERT INTO lorem VALUES (?)");
   for (var i = 0; i < 10; i++) {
-      stmt.run("Ipsum " + i);
+    stmt.run("Ipsum " + i);
   }
   stmt.finalize();
 
   db.each("SELECT rowid AS id, info FROM lorem", function(err, row) {
-      console.log(row.id + ": " + row.info);
+    console.log(row.id + ": " + row.info);
   });
 });
 

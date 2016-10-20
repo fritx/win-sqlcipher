@@ -1,6 +1,6 @@
 {
   "name": "win-sqlcipher",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Encrypted sqlite3 for Windows",
   "keywords": [
     "sqlite3",
@@ -8,13 +8,15 @@
     "sqlcipher",
     "encrypt"
   ],
-  "repository": "git://github.com/fritx/win-sqlcipher",
+  "repository": "git://github.com/fritx/win-sqlcipher.git",
   "scripts": {
+    "nwtest": "nw nw",
+    "nwbuild": "npm i --runtime=node-webkit --target=0.12.3 --target_arch=ia32",
     "preinstall": "node preinstall",
     "postinstall": "node postinstall"
   },
   "dependencies": {
     "shelljs": "^0.7.4",
-    "sqlite3": "git://github.com/liubiggun/node-sqlite3"
+    "sqlite3": "git+https://github.com/fritx/node-sqlite3.git#openssl-root"
   }
 }
