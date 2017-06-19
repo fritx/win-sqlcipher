@@ -12,11 +12,16 @@
   "scripts": {
     "nwtest": "nw nw",
     "nwbuild": "npm i --runtime=node-webkit --target=0.12.3 --target_arch=ia32",
+    "electron-test": "electron electron",
+    "electron-build": "electron-rebuild -w . -v 1.7.0",
     "preinstall": "node preinstall",
     "postinstall": "node postinstall"
   },
   "dependencies": {
     "shelljs": "^0.7.4",
     "sqlite3": "git+https://github.com/fritx/node-sqlite3.git#openssl-root"
+  },
+  "devDependencies": {
+    "electron-rebuild": "^1.5.11"
   }
 }
